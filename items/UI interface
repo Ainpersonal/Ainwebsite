@@ -1,0 +1,76 @@
+import React, { useState } from 'react';
+
+// Sample data
+const alumniData = [
+  { id: 'A001', name: 'Rina Saputra', major: 'Teknik Informatika', graduationYear: 2022, email: 'rina.saputra@example.com' },
+  { id: 'A002', name: 'Budi Santoso', major: 'Sistem Informasi', graduationYear: 2021, email: 'budi.santoso@example.com' },
+  { id: 'A003', name: 'Siti Nurhaliza', major: 'Teknik Komputer', graduationYear: 2023, email: 'siti.nurhaliza@example.com' }  
+];
+
+export default function HalamanPencarianAlumni() {
+  const [query, setQuery] = useState('');
+
+  // Filter logic
+  const filtered = alumniData.filter(alumni =>
+    alumni.name.toLowerCase().includes(query.toLowerCase()) ||
+    alumni.major.toLowerCase().includes(query.toLowerCase()) ||
+    alumni.graduationYear.toString().includes(query)
+  );
+
+  return (
+    <div className="p-8 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-6">Pencarian Alumni</h1>
+
+      {/* Search Bar */}
+      <div className="flex gap-2 mb-6">
+        <input
+          type="text"
+          placeholder="Cari berdasarkan nama, jurusan, atau tahun lulus..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="flex-1 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <button
+          onClick={() => setQuery('')}
+          className="px-4 py-3 bg-gray-200 rounded-lg hover:bg-gray-300 shadow"
+        >
+          Reset
+        </button>
+      </div>
+
+      {/* Results Table */}
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white rounded-lg shadow">
+          <thead>
+            <tr className="bg-indigo-600 text-white">
+              <th className="p-3 text-left">ID</th>
+              <th className="p-3 text-left">Nama</th>
+              <th className="p-3 text-left">Jurusan</th>
+              <th className="p-3 text-left">Tahun Lulus</th>
+              <th className="p-3 text-left">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.length > 0 ? (
+              filtered.map(alumni => (
+                <tr key={alumni.id} className="border-t hover:bg-gray-50">
+                  <td className="p-3">{alumni.id}</td>
+                  <td className="p-3">{alumni.name}</td>
+                  <td className="p-3">{alumni.major}</td>
+                  <td className="p-3">{alumni.graduationYear}</td>
+                  <td className="p-3">{alumni.email}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={5} className="p-4 text-center text-gray-500">
+                  Tidak ada data alumni.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}

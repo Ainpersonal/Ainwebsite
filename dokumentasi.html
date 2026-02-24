@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi - Asjad</title>
+    <link rel="stylesheet" href="/style-file/dock.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body class="scroll-page">
+    <div class="transition-layer"></div>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <div class="logo-placeholder">
+                <a href="index.html" style="color: white; font-weight: bold; text-decoration: none; letter-spacing: 2px;">ARCHIVES</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dokumentasi.html" class="active-nav">Dokumentasi</a></li>
+                <li><a href="sertifikat.html">Sertifikat</a></li>
+                <li><a href="pengalaman.html">Pengalaman</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <div class="header-text">
+            <h1 class="page-title">Dokumentasi</h1>
+            <p class="page-subtitle">Aku gak lupa kok sama dokumentasi, waktu gak bisa diulang jadi.. dokumentasi itu penting banget!</p>
+        </div>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="event">Event</button>
+            <button class="filter-btn" data-filter="project">Project</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="filter-btn" data-filter="art">Art</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-container"></div>
+    </main>
+
+    <audio id="bg-music" loop>
+        <source src="items/Her.mp3" type="audio/mpeg">
+    </audio>
+    <div class="music-control" onclick="toggleMusic()">
+        <span id="music-icon">🔇</span>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Image">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <script src="js-file/galery.js"></script> </body>
+</html>

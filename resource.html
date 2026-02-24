@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Asjad</title>
+    <link rel="stylesheet" href="style-file/resorc.css">
+    <link rel="stylesheet" href="style-file/dock.css">
+  <body class="scroll-page">
+    <div class="transition-layer"></div>
+
+    <header class="site-header">
+        <div class="logo-container">
+            <div class="logo-placeholder">
+                <a href="index.html" style="color: white; font-weight: bold; text-decoration: none; letter-spacing: 2px;">ARCHIVES</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dokumentasi.html">Dokumentasi</a></li>
+                <li><a href="sertifikat.html">Sertifikat</a></li>
+                <li><a href="pengalaman.html">Pengalaman</a></li>
+                <li><a href="resource.html" class="active-nav">Resources</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <div class="header-text">
+            <h1 class="page-title">Gudang Resources</h1>
+            <p class="page-subtitle">Kumpulan file, dokumen PDF, referensi link, dan hasil project yang bisa diakses kapan saja.</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Cari nama file, project, atau referensi...">
+        </div>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-type="all">Semua</button>
+            <button class="filter-btn" data-type="pdf">PDF & Dokumen</button>
+            <button class="filter-btn" data-type="link">Link Referensi</button>
+            <button class="filter-btn" data-type="project">Hasil Project</button>
+        </div>
+
+        <div class="resource-grid" id="resource-container"></div>
+    </main>
+
+    <script src="/js-file/resorc.js"></script>
+</body>
+</html>
